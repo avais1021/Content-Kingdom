@@ -947,6 +947,18 @@ section.books {
     margin-top: 50px;
     display: inline-block;
 }
+.all_our_books .max-width{
+    position: relative;
+}
+.all_our_books .navbar{
+    position: unset;
+    padding: unset;
+}
+.all_our_books .navbar li{
+    position: absolute;
+    right: 6%;
+    top: 30px;
+}
 
 .book__card img {
     width: 190px;
@@ -1453,6 +1465,17 @@ footer span a:hover {
         margin: 20px 0;
         font-size: 25px;
     }
+    .all_our_books .navbar .menu li a {
+        display: block;
+        margin: unset;
+        font-size: 18px;
+    }
+   .all_our_books .navbar .menu{
+    position: unset;
+    height: unset;
+    background: unset;
+    padding-top: unset;
+   }
 
     .home .home-content .text-2 {
         font-size: 70px;
@@ -1558,7 +1581,19 @@ footer span a:hover {
         font-size: 25px;
     }
 }
-
+@media screen and (max-width:570.9px){
+    .books__row{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:630.9px){
+    .all_our_books .navbar li {
+        top: -47px;
+    }
+    .all_our_books{
+        padding-top: 90px;
+    }
+}
 @media screen and (max-width:767.9px) {
     .blog .blog-container {
         flex-direction: column;
