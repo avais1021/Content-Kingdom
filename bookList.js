@@ -161,6 +161,8 @@ const ArrayObj = JSON.parse(localStorage.getItem('myBookData')) || [{
     }]
 }]
 
+localStorage.setItem('myBookData', JSON.stringify(ArrayObj))
+
 
 console.log(ArrayObj, 'ArrayObj');
 
