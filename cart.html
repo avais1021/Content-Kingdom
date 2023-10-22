@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+
+
+    <section class="cartPage">
+        <div class="max-width">
+
+            <h2 class="title">Our cart Page</h2>
+
+            <div class="cartPage__row">
+
+                <div class="cartPage__row__left">
+                    <div class="books__row">
+
+                    </div>
+                </div>
+
+                <div class="cartPage__row__right">
+                    <div class="Total">
+                        <h2>The Total Amount of</h2>
+                        <div class="productAmount">
+                            <p>product amount</p>
+                            <span id="Tamount">0 &#8377;</span>
+                        </div>
+                        <div class="shippingCharges">
+                            <p>shipping charges</p>
+                            <span>0 &#8377;</span>
+                        </div>
+                        <hr>
+                        <div class="including">
+                            <p>The total amount of (including VAT)</p>
+                            <span id="VAT">0 &#8377;</span>
+                        </div>
+                        <button id="checkoutBtn">CHECKOUT</button>
+                    </div>
+
+                    <div class="deliveryDate">
+                        <p>Expected delivery date</p>
+                        <p id="dDate">may 6th 2023 - may 10th 2023</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="paymentPage">
+            <div class="payment_wrapper">
+                <i class="fa-solid fa-xmark"></i>
+                <div class="address">
+                    <h2>Select a delivery address</h2>
+                    <textarea placeholder="Type Your Address" cols="30" rows="3"></textarea>
+                    <input class="mobile" type="number" placeholder="Type Your Mobile Number" autofocus>
+                </div>
+
+                <div class="paymentMethod">
+                    <h2>Select a payment method</h2>
+                    <div class="ways">
+                        <div class="warapRadio">
+                            <input name="abc" type="radio">
+                            <p>Credit or debit card</p>
+                        </div>
+                        <img src="images/debitCredit.png" alt="">
+                    </div>
+                    <div class="ways">
+                        <div class="warapRadio">
+                            <input name="abc" type="radio">
+                            <p>UPI apps</p>
+                        </div>
+                        <img src="images/gpay.png" alt="">
+                    </div>
+                    <div class="ways">
+                        <div class="warapRadio">
+                            <input name="abc" type="radio">
+                            <p>Net Banking</p>
+                        </div>
+                        <img src="images/netBanking.jpg" alt="">
+                    </div>
+                    <div class="ways">
+                        <div class="warapRadio">
+                            <input name="abc" type="radio">
+                            <p>Cash on Delivery</p>
+                        </div>
+                        <img src="images/cashOn.jpg" alt="">
+                    </div>
+                </div>
+
+                <button class="continue">Continue</button>
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+
+        const ArrayObj = JSON.parse(localStorage.getItem('myBookData'));
+
+
+        function cartPagerender() {
+            const books__row = document.querySelector('.books__row');
+
+            let html_str_cartPage = "";
+            ArrayObj[0].myBooks.forEach((ele) => {
+
+                if (ele.orderQty > 0) {
+                    html_str_cartPage += `
+            <div class="book__card" data-card="${ele.id}">
+                 <img src="${ele.img}" alt="books images">
+                 <div class="book__info">
+                 <h3>${ele.title}</h3>
+                    <hr>
+                 <p class="price">  <span>${ele.price} &#8377;</span>  <span class="high_price">${0.20 * ele.price + ele.price} &#8377; </span> </p>
+                 <hr>
+                 <div class="wrapper_addBook">
+                 <p class="delivery">Free delivery</p>
+                 <div class="addBook">
+                 <button class="decrement" ><i class="fa-solid fa-minus"></i></button>
+                 <input class="quantity" type="number" value="0" data-input="${ele.id}" >
+                 <button class="increment"><i class="fa-solid fa-plus"></i></button>
+                 </div>
+                 </div>
+                 <button class="RemoveItem">REMOVE ITEM</button>
+               </div>
+            </div>
+
+          `
+                }
+            })
+            books__row.innerHTML = html_str_cartPage;
+
+        }
+
+        cartPagerender();
+
+
+        function countQuantity() {
+            const quantity = document.querySelectorAll('.quantity');
+
+            ArrayObj[0].myBooks.forEach((book) => {
+
+                quantity.forEach((ele) => {
+
+                    if (book.id == ele.dataset.input) {
+                        console.log("Hello");
+                        ele.value = book.orderQty;
+                    }
+
+                })
+
+            })
+        }
+
+        function expectedDate() {
+            const dDate = document.querySelector('#dDate')
+            var date = new Date().getDate();
+            var cDate = date + 3;
+            // console.log(date, 'date');
+
+            var Month = new Date().getMonth();
+            // console.log(Month, 'Month');
+            let monthName = ["January", "February", "March", "April", "May", "Jun", "July", "August", "September", "October", "November", "December"];
+
+            var fullYear = new Date().getFullYear();
+            // console.log(fullYear, 'fullYear');
+
+
+            // dDate.innerHTML = monthName[Month] + cDate+"th" + fullYear; 
+            if (dDate != null) {
+                dDate.innerHTML = `${monthName[Month]}  ${date}th ${fullYear} to ${monthName[Month]}  ${cDate}th ${fullYear}`;
+            }
+        }
+
+        expectedDate();
+
+        // --
+
+        function CountPlusAllAmount() {
+
+            const Tamount = document.querySelector('#Tamount');
+            const VAT = document.querySelector('#VAT');
+            // console.log(Tamount, 'Tamount');
+
+            let tamount_string = 0;
+
+            ArrayObj[0].myBooks.forEach((book) => {
+                tamount_string += book.totalPrice;
+
+            })
+            if (Tamount != null || VAT != null) {
+                Tamount.innerHTML = tamount_string;
+                VAT.innerHTML = tamount_string + 0;
+            }
+
+        }
+
+
+
+        const RemoveItem = document.querySelectorAll(".RemoveItem");
+
+        if (RemoveItem != null) {
+            RemoveItem.forEach((item) => {
+                item.addEventListener("click", (e) => {
+
+                    let currentCard = e.target.closest(".book__card").dataset.card;
+                    ArrayObj[0].myBooks.forEach((books) => {
+                        if (books.id == currentCard) {
+                            books.totalPrice = (books.totalPrice - (books.price * books.orderQty));
+                            books.orderQty = 0;
+                            books.cartItem = 0;
+                            countQuantity();
+                            CountPlusAllAmount()
+                        }
+                    })
+
+                    localStorage.setItem('myBookData', JSON.stringify(ArrayObj))
+                    window.location.reload();
+                })
+
+            })
+        }
+
+        const checkoutBtn = document.querySelector('#checkoutBtn');
+        const paymentPage = document.querySelector('.paymentPage');
+        const cartPage = document.querySelector('.cartPage');
+        const faXmark = document.querySelector('.fa-xmark');
+
+
+        checkoutBtn.addEventListener('click', () => {
+            cartPage.style.height = '100vh';
+            cartPage.style.overflow = 'hidden'
+            paymentPage.style.display = "block";
+            cartPage.classList.add('giveOpacity')
+        })
+        faXmark.addEventListener('click', () => {
+            cartPage.style.height = 'unset';
+            cartPage.style.overflow = 'unset';
+            paymentPage.style.display = "none";
+            cartPage.classList.remove('giveOpacity')
+            // cartPageAfter.style.display = "block"
+        })
+
+
+
+    </script>
+
+    <script src="common-book-cart.js"></script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
