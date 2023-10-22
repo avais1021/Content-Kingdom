@@ -196,7 +196,7 @@ section .title::before {
     position: absolute;
     bottom: 0px;
     left: 50%;
-    width: 180px;
+    min-width: 180px;
     height: 3px;
     background: #111;
     transform: translateX(-50%);
@@ -211,6 +211,7 @@ section .title::after {
     padding: 0 5px;
     background: #fff;
     transform: translateX(-50%);
+    min-width: 180px;
 }
 
 /* navbar styling */
@@ -318,7 +319,7 @@ section .title::after {
 .home {
     display: flex;
     background: url("images/wall.jpg") no-repeat center;
-    height: 100vh;
+    /* height: 100vh; */
     color: #fff;
     min-height: 500px;
     background-size: cover;
@@ -375,7 +376,7 @@ section .title::after {
 
 /* about section styling */
 .about {
-    background: url("images/Dice.gif") no-repeat center;
+    background: url("images/Dice.gif") no-repeat center/cover;
 }
 
 .about .title {
@@ -754,6 +755,7 @@ video {
 
 .contact .contact-content .info .sub-title {
     color: #fff;
+    word-break: break-word;
 }
 
 .contact .right form .fields {
@@ -876,7 +878,7 @@ video {
     color: #ccc;
 }
 
-.blog #view-more-btn {
+.blog #view-more-btn , .books #view-more-btn {
     background: darkgoldenrod;
     color: #fff;
     font-size: 18px;
@@ -889,7 +891,7 @@ video {
     margin-top: 30px;
 }
 
-.blog #view-more-btn:hover {
+.blog #view-more-btn:hover , .books #view-more-btn:hover {
     background: none;
     color: darkgoldenrod;
 }
@@ -930,15 +932,20 @@ video {
 }
 
 section.books {
-    background: black;
+    background: #000000e0;
 }
 
 .books__row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 25px;
+}
+
+.all_books_view{
+    margin-top: 50px;
+    display: inline-block;
 }
 
 .book__card img {
@@ -1056,6 +1063,11 @@ a.buyNow {
     text-align: center;
 }
 
+.all_our_books{
+    padding-top: 40px;
+    padding-bottom: 70px;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -1139,6 +1151,9 @@ input[type=number] {
     right: 0;
     font-size: 30px;
     cursor: pointer;
+}
+.fa-cart-shopping:before{
+    content: "\f07a" !important;
 }
 
 .paymentPage h2 {
@@ -1388,7 +1403,8 @@ footer span a:hover {
 @media (max-width: 1104px) {
     .about .about-content .left img {
         height: 350px;
-        width: 350px;
+        max-width: 350px;
+        width: 100%;
     }
 }
 
@@ -1538,6 +1554,9 @@ footer span a:hover {
         font-size: 23px;
         line-height: 38px;
     }
+    .navbar .logo a{
+        font-size: 25px;
+    }
 }
 
 @media screen and (max-width:767.9px) {
@@ -1549,5 +1568,13 @@ footer span a:hover {
     .blog .blog-item {
         max-width: 400px;
         width: 100%;
+    }
+}
+@media screen and (max-width:388.9px) {
+    .navbar .logo a {
+        font-size: 23px;
+    }
+    .logo img {
+        width: 60px;
     }
 }

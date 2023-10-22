@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <section class="books all_our_books" id="Books">
+        <div class="max-width">
+
+            <h2 class="title">Our All Books</h2>
+
+            <div class="books__row all_books">
+
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const ArrayObj = JSON.parse(localStorage.getItem('myBookData'));
+
+        const all_books = document.querySelector('.all_books');
+
+        let html_str_allBooks = "";
+
+        ArrayObj[0].myBooks.forEach((ele, idx) => {
+
+
+
+            // all books 
+
+            html_str_allBooks += `
+                <div class="book__card" data-card="${ele.id}">
+                <img src="${ele.img}" alt="books images">
+                <div class="book__info">
+                    <h3>${ele.title}</h3>
+                    <hr>
+                    <p class="price">  <span>${ele.price} &#8377;</span>  <span class="high_price">${0.20 * ele.price + ele.price} &#8377; </span> </p>
+                    <hr>
+                    <div class="wrapper_addBook">
+                    <p class="delivery">Free delivery</p>
+                    <div class="addBook">
+                    <button class="decrement" ><i class="fa-solid fa-minus"></i></button>
+                    <input class="quantity" type="number" value="0" data-input="${ele.id}" >
+                    <button class="increment"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    </div>
+                    <a href="cart.html" class="buyNow">Buy Now</a>
+                </div>
+                </div>
+                `
+
+        })
+
+        all_books.innerHTML = html_str_allBooks;
+    </script>
+
+    <script src="bookList.js"></script>
+    <script src="common-book-cart.js"></script>
+</body>
+
+</html>

@@ -168,13 +168,13 @@ const books__row = document.querySelector('.books__row');
 
 let html_str_cards = "";
 
-ArrayObj[0].myBooks.forEach((ele) => {
+ArrayObj[0].myBooks.forEach((ele , idx) => {
 
     var id = "id" + Math.random().toString(16).slice(2)
 
     ele.id = id;
 
-
+    if(idx <= 3){
     html_str_cards += `
         <div class="book__card" data-card="${ele.id}">
           <img src="${ele.img}" alt="books images">
@@ -195,6 +195,7 @@ ArrayObj[0].myBooks.forEach((ele) => {
           </div>
        </div>
     `
+    }
 })
 
 books__row.innerHTML = html_str_cards;
