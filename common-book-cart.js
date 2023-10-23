@@ -1,9 +1,11 @@
 // common js
-var perfEntries = performance.getEntriesByType("navigation");
+// --
+// var perfEntries = performance.getEntriesByType("navigation");
 
-if (perfEntries[0].type === "back_forward") {
-    location.reload();
-}
+// if (perfEntries[0].type === "back_forward") {
+//     location.reload();
+// }
+// ------------
 
 const cart_Count_item = document.querySelector('.cart_Count_item');
 
@@ -95,6 +97,7 @@ additionItemCartLogo()
 
 const quantity = document.querySelectorAll('.quantity');
 
+function countQuantityFun () {
 ArrayObj[0].myBooks.forEach((book) => {
 
     quantity.forEach((ele) => {
@@ -105,8 +108,27 @@ ArrayObj[0].myBooks.forEach((book) => {
         }
 
     })
-
 })
+}
+countQuantityFun();
+
+// -----
+var mouseVal = true;
+const cursor_move = document.addEventListener('mousemove', () => {
+    if (mouseVal == true) {
+        countQuantityFun();
+        console.log(1)
+        mouseVal = false;
+    }
+})
+const onTouch = document.addEventListener('touchstart', () => {
+    if (mouseVal == true) {
+        countQuantityFun();
+        console.log(1)
+        mouseVal = false;
+    }
+})
+// --- 
 
 
 
@@ -136,17 +158,17 @@ function CountPlusAllAmount() {
 const imgRef = document.querySelectorAll('.book__card img[data-src]')
 
 const lazyImg = (entries) => {
-   
-        entries.forEach((entry) => {
 
-            console.log(entry, 'entry');
-            if (!entry.isIntersecting) return;
+    entries.forEach((entry) => {
 
-            const targetImg = entry.target;
-            targetImg.src = targetImg.dataset.src;
-         
-        })
-    
+        console.log(entry, 'entry');
+        if (!entry.isIntersecting) return;
+
+        const targetImg = entry.target;
+        targetImg.src = targetImg.dataset.src;
+
+    })
+
 }
 
 const imageObserver = new IntersectionObserver(lazyImg, {
