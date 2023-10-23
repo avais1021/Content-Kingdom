@@ -180,3 +180,13 @@ imgRef.forEach((ele) => {
     imageObserver.observe(ele);
 })
 
+// LOADER JS
+
+const loader = document.querySelector('.loader');
+document.body.style.overflow = 'hidden';
+document.body.style.height = '100vh';
+setTimeout(()=>{
+    loader.style.display = 'none';
+    document.body.style.overflow = 'unset';
+    document.body.style.height = 'unset';
+} , 3000)
