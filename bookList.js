@@ -177,8 +177,7 @@ ArrayObj[0].myBooks.forEach((ele , idx) => {
     if(idx <= 3){
     html_str_cards += `
         <div class="book__card" data-card="${ele.id}">
-        <!--  <img src="${ele.img}" alt="books-images"> -->
-       <img class="lazy-img" src="images/loading.jpg" data-src="${ele.img}" loading="lazy" alt="books-images">  
+       <img class="lazy-img" src="images/loaderBook.gif" data-src="${ele.img}" loading="lazy" alt="books-images">  
           <div class="book__info">
               <h3>${ele.title}</h3>
               <hr>
