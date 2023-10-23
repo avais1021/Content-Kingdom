@@ -45,7 +45,8 @@
 
             html_str_allBooks += `
                 <div class="book__card" data-card="${ele.id}">
-                <img src="${ele.img}" alt="books images">
+                    <!--  <img src="${ele.img}" alt="books-images"> -->
+                 <img class="lazy-img" src="images/loading.jpg" data-src="${ele.img}" loading="lazy" alt="books-images">
                 <div class="book__info">
                     <h3>${ele.title}</h3>
                     <hr>

@@ -1581,11 +1581,23 @@ footer span a:hover {
         font-size: 25px;
     }
 }
-@media screen and (max-width:570.9px){
+@media screen and (max-width:1234.9px){
     .books__row{
         justify-content: center;
     }
 }
+
+@media screen and (min-width:947px) and (max-width:1213px)   {
+    .navbar .logo a {
+        font-size: 26px;
+    }
+    .navbar .menu li a{
+        margin-left: 15px;
+        font-size: 15px;
+    }
+
+}
+
 @media screen and (max-width:630.9px){
     .all_our_books .navbar li {
         top: -47px;
