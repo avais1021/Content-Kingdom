@@ -1406,7 +1406,7 @@ input[type=number] {
     top: 0;
     left: 0;
     background: white;
-    z-index: 1000;
+    z-index: 10000;
 }
 .loader img{
     width: 300px;
