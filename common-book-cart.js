@@ -114,7 +114,7 @@ countQuantityFun();
 
 // -----
 var mouseVal = true;
-const cursor_move = document.addEventListener('mousemove', () => {
+const cursor_move = document.body.addEventListener('mousemove', () => {
     if (mouseVal == true) {
         countQuantityFun();
         console.log(1)
@@ -124,7 +124,7 @@ const cursor_move = document.addEventListener('mousemove', () => {
         console.log(mouseVal,'mouseval move')
     }
 })
-const onTouch = document.addEventListener('touchstart', () => {
+const onTouch = document.body.addEventListener('touchstart', () => {
     if (mouseVal == true) {
         countQuantityFun();
         console.log(1)
