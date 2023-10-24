@@ -110,7 +110,7 @@ function countQuantityFun() {
         })
     })
 }
-countQuantityFun();
+
 
 
 // -----
@@ -134,7 +134,7 @@ const onTouch = document.body.addEventListener('touchstart', () => {
 // --- 
 
 
-
+countQuantityFun();
 
 // --
 
