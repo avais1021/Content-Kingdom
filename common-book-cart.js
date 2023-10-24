@@ -97,20 +97,21 @@ additionItemCartLogo()
 
 const quantity = document.querySelectorAll('.quantity');
 
-function countQuantityFun () {
-ArrayObj[0].myBooks.forEach((book) => {
+function countQuantityFun() {
+    ArrayObj[0].myBooks.forEach((book) => {
 
-    quantity.forEach((ele) => {
+        quantity.forEach((ele) => {
 
-        if (book.id == ele.dataset.input) {
-            console.log("Hello");
-            ele.value = book.orderQty;
-        }
+            if (book.id == ele.dataset.input) {
+                console.log("Hello");
+                ele.value = book.orderQty;
+            }
 
+        })
     })
-})
 }
 countQuantityFun();
+
 
 // -----
 var mouseVal = true;
@@ -119,9 +120,6 @@ const cursor_move = document.body.addEventListener('mousemove', () => {
         countQuantityFun();
         console.log(1)
         mouseVal = false;
-    }else{
-        console.log('not work move')
-        console.log(mouseVal,'mouseval move')
     }
 })
 const onTouch = document.body.addEventListener('touchstart', () => {
@@ -129,12 +127,19 @@ const onTouch = document.body.addEventListener('touchstart', () => {
         countQuantityFun();
         console.log(1)
         mouseVal = false;
-    }else{
-        console.log('not work touch')
-        console.log(mouseVal, 'mouseval touch')
     }
 })
 // --- 
+
+const AllSection = document.querySelectorAll('section');
+AllSection.forEach((ele) => {
+    ele.addEventListener('touchstart', () => {
+        if (mouseVal == true) {
+        alert(1)
+        mouseVal = false;
+        }
+    })
+})
 
 
 
