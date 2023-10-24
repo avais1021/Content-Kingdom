@@ -913,6 +913,12 @@ video {
 
 }
 
+.full-blog-content img {
+    max-width: 600px;
+    width: 100%;
+    height: 340px;
+}
+
 /* Books section  */
 .cart_logo span {
     margin-left: 7px;
