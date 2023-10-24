@@ -131,15 +131,6 @@ const onTouch = document.body.addEventListener('touchstart', () => {
 })
 // --- 
 
-const AllSection = document.querySelectorAll('section');
-AllSection.forEach((ele) => {
-    ele.addEventListener('touchstart', () => {
-        if (mouseVal == true) {
-        alert(1)
-        mouseVal = false;
-        }
-    })
-})
 
 
 
