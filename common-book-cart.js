@@ -95,23 +95,6 @@ function additionItemCartLogo() {
 additionItemCartLogo()
 // })
 
-const quantity = document.querySelectorAll('.quantity');
-
-function countQuantityFun() {
-    ArrayObj[0].myBooks.forEach((book) => {
-
-        quantity.forEach((ele) => {
-
-            if (book.id == ele.dataset.input) {
-                console.log("Hello");
-                ele.value = book.orderQty;
-            }
-
-        })
-    })
-}
-
-
 
 // -----
 var mouseVal = true;
@@ -133,7 +116,21 @@ const onTouch = document.body.addEventListener('touchstart', () => {
 })
 // --- 
 
+const quantity = document.querySelectorAll('.quantity');
 
+function countQuantityFun() {
+    ArrayObj[0].myBooks.forEach((book) => {
+
+        quantity.forEach((ele) => {
+
+            if (book.id == ele.dataset.input) {
+                console.log("Hello");
+                ele.value = book.orderQty;
+            }
+
+        })
+    })
+}
 countQuantityFun();
 
 // --
