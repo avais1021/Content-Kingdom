@@ -119,6 +119,9 @@ const cursor_move = document.addEventListener('mousemove', () => {
         countQuantityFun();
         console.log(1)
         mouseVal = false;
+    }else{
+        console.log('not work move')
+        console.log(mouseVal,'mouseval move')
     }
 })
 const onTouch = document.addEventListener('touchstart', () => {
@@ -126,6 +129,9 @@ const onTouch = document.addEventListener('touchstart', () => {
         countQuantityFun();
         console.log(1)
         mouseVal = false;
+    }else{
+        console.log('not work touch')
+        console.log(mouseVal, 'mouseval touch')
     }
 })
 // --- 
