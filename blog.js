@@ -65,7 +65,7 @@ if (blogTitle && blogContent) {
   if (fullBlogContentElement != null) {
     fullBlogContentElement.innerHTML = `
   <div>
-    <img src=${blogImg}/ alt="img">
+    <img src="images/vactorLoader.jpg" data-src=${blogImg}/ alt="img">
     <h2>${blogTitle}</h2>
     <p>${blogContent}</p>
     </div>

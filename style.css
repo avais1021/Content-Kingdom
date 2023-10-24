@@ -899,6 +899,9 @@ video {
 .blog-item:nth-child(n + 4) {
     display: none;
 }
+.all_blog_items:nth-child(n + 4) {
+    display: unset;
+}
 
 /* full blog screen */
 .full-blog-content {
