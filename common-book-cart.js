@@ -107,14 +107,6 @@ const cursor_move = document.body.addEventListener('mousemove', () => {
         console.log('mouse false')
     }
 })
-// const onTouch = document.body.addEventListener('touchstart', () => {
-//     if (mouseVal == true) {
-//         countQuantityFun();
-//         console.log(1)
-//         // mouseVal = false;
-//     }
-// })
-// --- 
 
 const quantity = document.querySelectorAll('.quantity');
 
