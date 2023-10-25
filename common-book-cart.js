@@ -98,10 +98,10 @@ additionItemCartLogo()
 
 // -----
 var mouseVal = true;
-const cursor_move = document.body.addEventListener('touchmove', () => {
+const cursor_move = document.body.addEventListener('touchstart', () => {
     if (mouseVal == true) {
         countQuantityFun();
-        alert(1)
+        // alert(1)
         console.log('mouse true')
         // mouseVal = false;
     }else{
