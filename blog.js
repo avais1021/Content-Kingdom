@@ -40,12 +40,12 @@ const currentURL = window.location.href;
 
 // Create a URLSearchParams object to parse the query parameters
 const searchParams = new URLSearchParams(currentURL.split("?")[1]);
-console.log("🚀 ~ file: blog.js:7 ~ searchParams:", searchParams.get("title"));
-console.log(
-  "🚀 ~ file: blog.js:7 ~ searchParams:",
-  searchParams.getAll("text")
-);
-console.log("🚀 ~ file: blog.js:7 ~ searchParams:", searchParams.get("image"));
+// console.log("🚀 ~ file: blog.js:7 ~ searchParams:", searchParams.get("title"));
+// console.log(
+//   "🚀 ~ file: blog.js:7 ~ searchParams:",
+//   searchParams.getAll("text")
+// );
+// console.log("🚀 ~ file: blog.js:7 ~ searchParams:", searchParams.get("image"));
 
 // Get specific query parameters by name
 const blogTitle = searchParams.get("title");

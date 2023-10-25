@@ -12,7 +12,7 @@ const cart_Count_item = document.querySelector('.cart_Count_item');
 const increment = document.querySelectorAll('.increment');
 const decrement = document.querySelectorAll('.decrement');
 
-console.log(increment, 'increment');
+// console.log(increment, 'increment');
 
 ArrayObj[0].myBooks.forEach((books) => {
 
@@ -21,8 +21,8 @@ ArrayObj[0].myBooks.forEach((books) => {
 
             let currentCard = e.target.closest(".book__card").dataset.card;
             var quantity = e.target.closest(".book__card").querySelector('.quantity')
-            console.log(ele.id, 'ele.id');
-            console.log(quantity.value, 'testIncrementValur');
+            // console.log(ele.id, 'ele.id');
+            // console.log(quantity.value, 'testIncrementValur');
 
             if (books.id == currentCard) {
                 quantity.value++;
@@ -71,7 +71,7 @@ ArrayObj[0].myBooks.forEach((books) => {
             const sum = ArrayObj[0].myBooks.reduce((accumulator, object) => {
                 return accumulator + Number(object.orderQty);
             }, 0);
-            console.log(sum, 'sum');
+            // console.log(sum, 'sum');
 
 
         })
@@ -88,7 +88,7 @@ function additionItemCartLogo() {
         const sumCartItem = ArrayObj[0].myBooks.reduce((accumulator, object) => {
             return accumulator + Number(object.cartItem);
         }, 0);
-        console.log(sumCartItem, 'sum');
+        // console.log(sumCartItem, 'sum');
         cart_Count_item.innerHTML = sumCartItem;
     }
 }
@@ -101,10 +101,10 @@ var mouseVal = true;
 const cursor_move = document.body.addEventListener('mousemove', () => {
     if (mouseVal == true) {
         countQuantityFun();
-        console.log('mouse true')
+        // console.log('mouse true')
         // mouseVal = false;
     }else{
-        console.log('mouse false')
+        // console.log('mouse false')
     }
 })
 // document.addEventListener('touchmove')
@@ -116,7 +116,7 @@ function countQuantityFun() {
         quantity.forEach((ele) => {
 
             if (book.id == ele.dataset.input) {
-                console.log("Hello");
+                // console.log("Hello");
                 ele.value = book.orderQty;
             }
 

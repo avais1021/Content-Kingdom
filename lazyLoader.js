@@ -7,7 +7,7 @@ const lazyImg = (entries) => {
 
     entries.forEach((entry) => {
 
-        console.log(entry, 'entry');
+        // console.log(entry, 'entry');
         if (!entry.isIntersecting) return;
 
         const targetImg = entry.target;
