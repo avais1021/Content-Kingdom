@@ -101,13 +101,14 @@ var mouseVal = true;
 const cursor_move = document.body.addEventListener('mousemove', () => {
     if (mouseVal == true) {
         countQuantityFun();
+        alert(1)
         console.log('mouse true')
         // mouseVal = false;
     }else{
         console.log('mouse false')
     }
 })
-
+// document.addEventListener('touchmove')
 const quantity = document.querySelectorAll('.quantity');
 
 function countQuantityFun() {
