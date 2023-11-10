@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Include necessary CSS and JavaScript files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <!-- ... -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+      <!-- header------- -->
+      <nav class="navbar dublicateNav_S">
+        <div class="max-width">
+            <div class="logo"><img src="images/logo5.png" style="margin-top: -10px; margin-bottom: -10px ;" /><a
+                    href="#">Content<span>Kingdom.</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">About Us</a></li>
+                <li><a href="#services" class="menu-btn">Services</a></li>
+                <li><a href="books.html" class="menu-btn">Books</a></li>
+                <li><a href="#teams" class="menu-btn">Team</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+                <li><a href="cart.html?cartPage=true" class="cart_logo menu-btn"><i
+                            class="fa-solid fa-cart-shopping"></i><span>Cart</span><span
+                            class="cart_Count_item">0</span></a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+      <!-- header close   -->
+
     <!-- Full Blog Content -->
     <div class="full-blog-content" id="full-blog-content">
       <!-- Blog content will go here -->
@@ -17,5 +42,8 @@
     <script src="blog.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="lazyLoader.js"></script>
+    <script src="header.js"></script>
+    <script src="bookList.js"></script>
+    <script src="common-book-cart.js"></script>
   </body>
 </html>

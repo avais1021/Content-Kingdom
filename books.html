@@ -10,16 +10,32 @@
 </head>
 
 <body>
+
+       <!-- header------- -->
+       <nav class="navbar dublicateNav">
+        <div class="max-width">
+            <div class="logo"><img src="images/logo5.png" style="margin-top: -10px; margin-bottom: -10px ;" /><a
+                    href="#">Content<span>Kingdom.</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">About Us</a></li>
+                <li><a href="#services" class="menu-btn">Services</a></li>
+                <li><a href="books.html" class="menu-btn">Books</a></li>
+                <li><a href="#teams" class="menu-btn">Team</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+                <li><a href="cart.html?cartPage=true" class="cart_logo menu-btn"><i
+                            class="fa-solid fa-cart-shopping"></i><span>Cart</span><span
+                            class="cart_Count_item">0</span></a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- header close   -->
+
     <section class="books all_our_books" id="Books">
         <div class="max-width">
-
-            <nav class="navbar">
-                <ul class="menu">
-                    <li><a href="cart.html?cartPage=true" class="cart_logo menu-btn"><i
-                                class="fa-solid fa-cart-shopping"></i><span>Cart</span><span
-                                class="cart_Count_item">0</span></a></li>
-                </ul>
-            </nav>
 
             <h2 class="title">Our All Books</h2>
 
@@ -69,9 +85,11 @@
         all_books.innerHTML = html_str_allBooks;
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="bookList.js"></script>
     <script src="common-book-cart.js"></script>
     <script src="lazyLoader.js"></script>
+    <script src="header.js"></script>
 </body>
 
 </html>

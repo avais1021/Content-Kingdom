@@ -903,6 +903,10 @@ video {
     display: unset;
 }
 
+.allBlogs{
+    padding-top: 140px;
+}
+
 /* full blog screen */
 .full-blog-content {
     max-width: 100%;
@@ -913,6 +917,7 @@ video {
     justify-content: center;
     color: #fff;
     font-family: "Poppins", sans-serif;
+    padding-top: 130px;
 
 }
 
@@ -959,7 +964,7 @@ section.books {
 .all_our_books .max-width{
     position: relative;
 }
-.all_our_books .navbar{
+/* .all_our_books .navbar{
     position: unset;
     padding: unset;
 }
@@ -968,6 +973,14 @@ section.books {
     right: 6%;
     top: 30px;
     z-index: 100;
+} */
+.dublicateNav{
+    background: black;
+}
+.dublicateNav_S{
+background: black;
+min-height: 82px;
+padding: 18px 0;
 }
 
 .book__card img {
@@ -1086,7 +1099,7 @@ a.buyNow {
 }
 
 .all_our_books{
-    padding-top: 40px;
+    padding-top: 130px;
     padding-bottom: 70px;
 }
 
@@ -1119,7 +1132,7 @@ input[type=number] {
 }
 
 .cartPage {
-    padding-top: 40px;
+    padding-top: 130px;
     padding-bottom: 0px;
     position: relative;
 }
