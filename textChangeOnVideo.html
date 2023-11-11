@@ -21,6 +21,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 30px;
+            line-height: 30px;
             color: white;
             text-align: center;
             width: 100%;
@@ -29,6 +30,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+        }
+
+        @media screen and (max-width:500.9px) {
+            #overlay-text {
+                font-size: 20px;
+                padding: 0 15px;
+            }
         }
     </style>
 
@@ -52,16 +61,16 @@
             video?.play();
         });
 
-       
+
 
         video.addEventListener("timeupdate", function () {
             const currentTime = Math.floor(video.currentTime);
 
             if (currentTime <= 10) {
                 overlayText.innerText = "Welcome";
-            } else if (currentTime >=10 && currentTime < 20) {
+            } else if (currentTime >= 10 && currentTime < 20) {
                 overlayText.innerText = "“You do not find the happy life. You make it.” – Camilla Eyring Kimball";
-            } else if (currentTime >= 20 && currentTime < 30 ) {
+            } else if (currentTime >= 20 && currentTime < 30) {
                 overlayText.innerText = "“Believe you can and you’re halfway there.” – Theodore Roosevelt";
             } else if (currentTime >= 30 && currentTime < 40) {
                 overlayText.innerText = "“Failure is the condiment that gives success its flavor.” – Truman Capote";
@@ -71,14 +80,14 @@
                 overlayText.innerText = "“When you have a dream, you’ve got to grab it and never let go.” – Carol Burnett";
             } else if (currentTime >= 60 && currentTime < 71) {
                 overlayText.innerText = "“Life changes very quickly, in a very positive way, if you let it.” – Lindsey Vonn";
-            }  
+            }
 
 
         });
 
-        setInterval(()=>{
+        setInterval(() => {
             console.log(video.currentTime)
-        } , 1000)
+        }, 1000)
 
     </script>
 
