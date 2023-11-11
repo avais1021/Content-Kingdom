@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text change on video</title>
+
+    <style>
+        #video-container {
+            position: relative;
+        }
+
+        #myVideo {
+            object-fit: unset;
+        }
+
+        #overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            background: #000000a6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="video-container">
+        <video id="myVideo" width="100%" height="360" loop="true" muted>
+            <source src="natureVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="overlay-text">Welcome</div>
+    </div>
+
+    <script>
+        const video = document.getElementById("myVideo");
+        const overlayText = document.getElementById("overlay-text");
+
+        document.addEventListener('DOMContentLoaded', function () {
+            video?.play();
+        });
+
+       
+
+        video.addEventListener("timeupdate", function () {
+            const currentTime = Math.floor(video.currentTime);
+
+            if (currentTime <= 10) {
+                overlayText.innerText = "Welcome";
+            } else if (currentTime >=10 && currentTime < 20) {
+                overlayText.innerText = "“You do not find the happy life. You make it.” – Camilla Eyring Kimball";
+            } else if (currentTime >= 20 && currentTime < 30 ) {
+                overlayText.innerText = "“Believe you can and you’re halfway there.” – Theodore Roosevelt";
+            } else if (currentTime >= 30 && currentTime < 40) {
+                overlayText.innerText = "“Failure is the condiment that gives success its flavor.” – Truman Capote";
+            } else if (currentTime >= 40 && currentTime < 50) {
+                overlayText.innerText = "“It is never too late to be what you might have been.” – George Eliot";
+            } else if (currentTime >= 50 && currentTime < 60) {
+                overlayText.innerText = "“When you have a dream, you’ve got to grab it and never let go.” – Carol Burnett";
+            } else if (currentTime >= 60 && currentTime < 71) {
+                overlayText.innerText = "“Life changes very quickly, in a very positive way, if you let it.” – Lindsey Vonn";
+            }  
+
+
+        });
+
+        setInterval(()=>{
+            console.log(video.currentTime)
+        } , 1000)
+
+    </script>
+
+</body>
+
+</html>
